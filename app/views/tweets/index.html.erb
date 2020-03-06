@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Twitter</h1>
+<%= render 'form', tweet: @tweet %>
+<div class="twitter">
+  <table>
+    <thead>
+      <tr>
+        <th>Post</th>
+        <th>User</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+     <% @user_tweets.each do |user_tweet| %>
+			<tr>
+				<td>
+						<%= user_tweet.post %>
+				</td>
+				<td>
+					<%= link_to user_tweet.email,'user/profile/'+user_tweet.id.to_s %>
+				</td>
+				<td>
+					<%= link_to 'follow', 'follows/follow/'+user_tweet.id.to_s, method: :post %>
+					<%= link_to 'unfollow', 'follows/unfollow/'+user_tweet.id.to_s, method: :post %>
+				</td>
+			</tr>
+		<% end %>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user.email, 'user/profile/'+user.id.to_s %>
+        </td>
+        <td>
+          <%= link_to 'follow', 'follows/follow/'+user.id.to_s, method: :post %>
+          <%= link_to 'unfollow', 'follows/unfollow/'+user.id.to_s, method: :post %>
+        </td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>

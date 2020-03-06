@@ -1,0 +1,12 @@
+tweet:
+  success: 'Tweet Created Successfully'
+  failure: 'Failed to Created Tweet'
+
+follow:
+  success: "Followed Successfully"
+  already_following: "Already Following"
+  failure: "Something went wrong"
+
+unfollow:
+  success: "Unfollowed Successfully"
+  failure: "Something went wrong"

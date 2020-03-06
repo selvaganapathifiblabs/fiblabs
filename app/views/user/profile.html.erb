@@ -1,0 +1,29 @@
+<div>
+  Username: <%=@user.email%>
+</div>
+<div class="twitter">
+  <table>
+    <tr>
+      <th>Followings - <%=@followings.count%></th>
+    </tr>
+    <%@followings.each do |following|%>
+      <tr>
+        <td>
+          <%= following.email%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <table>
+    <tr>
+      <th>Followers - <%=@followers.count%></th>
+    </tr>
+    <%@followers.each do |follower|%>
+      <tr>
+        <td>
+          <%= follower.email%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
